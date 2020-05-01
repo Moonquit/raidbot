@@ -6,7 +6,7 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 from vk_api.keyboard import VkKeyboard
 
 
-vk = vk_api.VkApi(token='TOKEN')
+vk = vk_api.VkApi(token=TOKEN)
 longpoll = VkBotLongPoll(vk, GROUP_ID)
 vk = vk.get_api()
 
