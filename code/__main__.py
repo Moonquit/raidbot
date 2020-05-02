@@ -20,21 +20,18 @@ vk = vk.get_api()
 # Main loop
 for event in longpoll.listen():
     if event.type == VkBotEventType.MESSAGE_NEW:
-        # You're id in vk.com 
-        if event.object.message["from_id"] == 544332520:
 
-            # Command `gg`
-            # <description>
-            if event.object.message["text"].lower() == "/gg":
+            # if the bot was added to the chat       
+            if event.from_chat:
                 try:
                     #infinity cycle
                     while 1:
                         vk.messages.send(
-                            peer_id=event.object.message["peer_id"],
+                            chat_id = event.chat_id,
                             message=config.FLOOD_MSG,
                             keyboard=keyboard.menu,
                             random_id=0
-                    )
+                        )
                 except Exception:
                     time.sleep(5)
                     continue
