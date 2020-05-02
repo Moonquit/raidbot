@@ -1,39 +1,40 @@
-# -*- coding: utf8 -*-
-import time
+import asyncio
 
-import vk_api
-from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
+import vk_dev
 
 import config
 import keyboard
 
 
-# API and LP settings
-vk = vk_api.VkApi(
+api = vk_dev.Api(
     token=config.TOKEN,
-    api_version=config.VERSION
+    group_id=config.GROUP_ID,
+    v=config.VERSION
 )
-longpoll = VkBotLongPoll(vk, config.GROUP_ID)
-vk = vk.get_api()
+lp = api >> vk_dev.LongPoll()
 
 
-# Main loop
-for event in longpoll.listen():
-    if event.type == VkBotEventType.MESSAGE_NEW:
+@lp.message_new()
+async def flood(event, pl):
+    """
+    Flood if it was invited
+    """
+    if (
+        'action' in event.object.message and
+        event.object.message.action.type == 'chat_invite_user'
+    ):
+        while True:
+            try:
+                await api.messages.send(
+                    peer_id=event.object.message.peer_id,
+                    message=config.FLOOD_MSG,
+                    keyboard=keyboard.menu,
+                    random_id=0
+                )
+                await asyncio.sleep(0.1)
+            except Exception:
+                await asyncio.sleep(5)
 
-            # if the bot was added to the chat       
-            if event.from_chat:
-                try:
-                    #infinity cycle
-                    while 1:
-                        vk.messages.send(
-                            chat_id = event.chat_id,
-                            message=config.FLOOD_MSG,
-                            keyboard=keyboard.menu,
-                            random_id=0
-                        )
-                except Exception:
-                    time.sleep(5)
-                    continue
 
-
+if __name__ == '__main__':
+    lp()
