@@ -1,96 +1,23 @@
-from vk_api.keyboard import VkKeyboard
+from vk_dev import keyboard, Button
+
 
 label = f"STOP!{' '*22}vto.pe"
 
-menu = VkKeyboard()
-one_time = False
-
-#1 line (2 buttons)
-menu.add_button(
-    label=label,
-    color="positive"
+menu =\
+keyboard(one_time=False).create(
+    Button.text(payload="{}", label=label).positive(),
+    Button.text(payload="{}", label=label).negative(),
+    button.line(),
+    Button.text(payload="{}", label=label).positive(),
+    Button.text(payload="{}", label=label).negative(),
+    Button.text(payload="{}", label=label).primary(),
+    Button.text(payload="{}", label=label).secondary(),
+    button.line(),
+    Button.text(payload="{}", label=label).positive(),
+    Button.text(payload="{}", label=label).negative(),
+    Button.text(payload="{}", label=label).primary(),
+    Button.text(payload="{}", label=label).secondary(),
+    button.line(),
+    Button.text(payload="{}", label=label).primary(),
+    Button.text(payload="{}", label=label).secondary(),
 )
-menu.add_button(
-    label=label,
-    color="negative"
-)
-
-menu.add_line()
-
-
-#2 line (4 buttons)
-menu.add_button(
-    label=label,
-    color="primary")
-
-menu.add_button(
-    label=label,
-    color="positive")
-
-
-menu.add_button(
-    label=label,
-    color="positive"
-)
-menu.add_button(
-    label=label,
-    color="negative"
-)
-
-menu.add_line()
-
-
-#3 line (4 buttons)
-menu.add_button(
-    label=label,
-    color="primary")
-
-menu.add_button(
-    label=label,
-    color="positive")
-
-
-menu.add_button(
-    label=label,
-    color="positive"
-)
-menu.add_button(
-    label=label,
-    color="negative"
-)
-
-menu.add_line()
-
-
-#4 line (4 buttons)
-menu.add_button(
-    label=label",
-    color="primary")
-
-menu.add_button(
-    label=label,
-    color="positive")
-
-
-menu.add_button(
-    label=label,
-    color="positive"
-)
-menu.add_button(
-    label=label,
-    color="negative"
-)
-
-menu.add_line()
-
-
-# 5 line (2 buttons)
-menu.add_button(
-    label=label,
-    color="primary")
-
-menu.add_button(
-    label=label,
-    color="positive")
-
-menu = menu.get_keyboard()
