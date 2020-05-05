@@ -4,7 +4,11 @@ import vk_dev
 
 import config
 import keyboard
+import ggrun
 
+chats = 0
+
+ggrun.preview()
 
 api = vk_dev.Api(
     token=config.TOKEN,
@@ -22,7 +26,9 @@ async def flood(event, pl):
     if (
         'action' in event.object.message and
         event.object.message.action.type == 'chat_invite_user'
-    ):
+    ): 
+        chats +=1
+        print(f'\033[31m[*]\033[0m New chat | Total chats: {chats}')
         while True:
             try:
                 await api.messages.send(
