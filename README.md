@@ -27,7 +27,6 @@ _Will be added later_
 
 ## Recommendations
 Create virtual enviroment and install packages there
-It is also advisable to use python 3.8.2 + (not lower than 3.8.2)
 ```bash
 cd raidbot
 python3 -m venv env
@@ -39,4 +38,7 @@ After session you can deacticate your env
 deactivate
 ```
 It is also advisable to use python 3.8.2 + (not lower than 3.8.2)
+```bash
+python=3.8.2 +
+```
 Possible `FLOOD_MSG` check at the `raidbot/code/__init__.py`
