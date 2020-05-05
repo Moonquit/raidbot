@@ -23,7 +23,7 @@ Make `config.py` at the `raidbot/code/` directory and add this params
 |FLOOD_MSG|str|Flood message|
 
 ## Abilities
-The Raidbot can flood in several chats at once. Because of this, usually VK starts to lag and crashes 
+The Raidbot can flood in several chats concurrently. Because of this, usually VK starts to lag and crashes. Also, a keyboard is attached to the flood-messages, when VK's user click on it, he will send a message with the site 'vto.pe', for which VK will give a ban to this user. Be careful)  
 
 ## Recommendations
 Create virtual enviroment and install packages there
