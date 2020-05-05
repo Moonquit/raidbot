@@ -1,5 +1,6 @@
  # Raidbot
 >[*] Made by Alex-Smir and Rhinik (github.com)
+
 >This is Raid Bot for vk.com
 ## Install
 ```bash
