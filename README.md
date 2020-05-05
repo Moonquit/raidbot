@@ -39,4 +39,4 @@ After session you can deacticate your env
 deactivate
 ```
 It is also advisable to use python 3.8.2 + (not lower than 3.8.2)
-Possible `FLOOD_MSG` check at the raidbot/code/__init__.py
+Possible `FLOOD_MSG` check at the `raidbot/code/__init__.py`
