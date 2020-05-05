@@ -6,7 +6,6 @@ import config
 import keyboard
 import ggrun
 
-chats = 0
 
 ggrun.preview()
 
@@ -23,6 +22,8 @@ async def flood(event, pl):
     """
     Flood if it was invited
     """
+    chats = 0
+
     if (
         'action' in event.object.message and
         event.object.message.action.type == 'chat_invite_user'
