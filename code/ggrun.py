@@ -29,4 +29,6 @@ def preview():
     print('   ██      ██    ██      ██    ')
     print('     ██████        ██████      ')
     print()
+    print('\033[31m[*]\033[0m Click "CTRL + C" or "CTRL + Z" to stop the bot')
+    print()
     print('\033[36m[*]\033[0m Bot activated')
