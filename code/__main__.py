@@ -1,14 +1,12 @@
 import asyncio
+import re
 
 import vk_dev
 
 import config
 import keyboard
-import ggrun
-import re
+import preview
 
-
-ggrun.preview()
 
 api = vk_dev.Api(
     token=config.TOKEN,
@@ -17,10 +15,7 @@ api = vk_dev.Api(
 )
 lp = api >> vk_dev.LongPoll()
 
-global chats
 chats = 0
-
-global mess
 mess = 0
 
 
@@ -29,18 +24,15 @@ async def flood(event, pl):
     """
     Flood if it was invited
     """
-    
+    global chats
+    global mess
+
     if (
         'action' in event.object.message and
         event.object.message.action.type == 'chat_invite_user'
-    ): 
-
-
-        global chats 
+    ):
         chats += 1
         print(f'\033[35m[*]\033[0m New chat | Total chats: {chats}')
-
-
         while True:
             try:
                 await api.messages.send(
@@ -49,23 +41,29 @@ async def flood(event, pl):
                     keyboard=keyboard.menu,
                     random_id=0
                 )
-                global mess
                 mess += 1
-                await asyncio.sleep(0.1)    
+                await asyncio.sleep(0.1)
 
             except vk_dev.VkErr as err:
-                Error_Code = int(re.findall(r"\[.+\]", err.text)[0][5:-1])
-                if Error_Code == 7:
+                error_code = int(re.findall(r"\[.+\]", err.text)[0][5:-1])
+                if error_code == 7:
                     chats -= 1
-                    print(f'\033[31m[*]\033[0m Bot kick from chat | Total chats: {chats}')
-                elif Error_Code == 9: 
+                    print(
+                        "\033[31m[*]\033[0m Bot kick from chat | "
+                        f"Total chats: {chats}"
+                    )
+                elif error_code == 9:
                     await asyncio.sleep(5)
                 else:
-                    print(err) 
+                    print(err)
 
             except KeyboardInterrupt:
-                    print(f'\033[32m[*]\033[0m Bot stoped! Total chats: {chats} | Total messages: {mess}')    
-  
+                print(
+                    "\033[32m[*]\033[0m Bot stoped!"
+                    f"Total chats: {chats} | "
+                    f"Total messages: {mess}"
+                )
+                exit()
 
 
 if __name__ == '__main__':

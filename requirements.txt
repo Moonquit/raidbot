@@ -1,2 +1,2 @@
-vk_dev==3.0.1
+vk_dev==3.0.0
 colorama==0.4.3

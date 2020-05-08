@@ -1,11 +1,10 @@
  # Raidbot
->[*] Made by Alex-Smir and Rhinik (github.com)
-
->This is Raid Bot for vk.com
+[![](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-382/)
+> This is Raid Bot for vk.com. Made by Alex-Smir and Rhinik (github.com)
 ## Install
 ```bash
 git clone https://github.com/ALex-Smir/raidbot.git
-``` 
+```
 ## Run
 At the main repo directory run `code` like a module:
 ```bash
@@ -20,7 +19,7 @@ Make `config.py` at the `raidbot/code/` directory and add this params
 |TOKEN|str|Your API token|
 |VERSION|str|API version. Recommend '5.123'|
 |GROUP_ID|int|VK group id|
-|FLOOD_MSG|str|Flood message|
+|FLOOD_MSG|str|Flood message. Check example at the `raidbot/exmpales/flood_msg.txt`|
 
 ## Abilities
 The Raidbot can flood in several chats concurrently. Because of this, usually VK starts to lag and crashes. Also, a keyboard is attached to the flood-messages, when VK's user click on it, he will send a message with the site 'vto.pe', for which VK will give a ban to this user. Be careful)  
@@ -37,8 +36,3 @@ After session you can deacticate your env
 ```bash
 deactivate
 ```
-It is also advisable to use python 3.8+ (not lower than 3.8)
-```bash
-python=3.8+
-```
-Possible `FLOOD_MSG` check at the `raidbot/code/__init__.py`
