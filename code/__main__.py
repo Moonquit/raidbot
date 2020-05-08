@@ -59,7 +59,7 @@ async def flood(event, pl):
 
             except KeyboardInterrupt:
                 print(
-                    "\033[32m[*]\033[0m Bot stoped!"
+                    "\033[32m[*]\033[0m Bot was stoped!"
                     f"Total chats: {chats} | "
                     f"Total messages: {mess}"
                 )
