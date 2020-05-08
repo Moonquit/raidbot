@@ -34,9 +34,12 @@ async def flood(event, pl):
         'action' in event.object.message and
         event.object.message.action.type == 'chat_invite_user'
     ): 
+
+
         global chats 
         chats += 1
         print(f'\033[35m[*]\033[0m New chat | Total chats: {chats}')
+
 
         while True:
             try:
