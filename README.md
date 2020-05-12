@@ -11,6 +11,11 @@ At the main repo directory run `code` like a module:
 cd raidbot
 python3 -m code
 ```
+If you did everything right, but you have an error, then try:
+```bash
+cd raidbot
+python code
+```
 ## Config params
 Make `config.py` at the `raidbot/code/` directory and add this params
 
