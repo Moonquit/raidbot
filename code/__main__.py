@@ -8,11 +8,6 @@ import keyboard
 import preview
 
 
-
-class ExitError(Exception):
-    pass
-
-
 api = vk_dev.Api(
     token=config.TOKEN,
     group_id=config.GROUP_ID,
@@ -30,7 +25,6 @@ async def flood(event, pl):
     Flood if it was invited
     """
     global chats
-    global mess
 
     if (
         'action' in event.object.message and
@@ -47,7 +41,6 @@ async def flood(event, pl):
                         keyboard=keyboard.menu,
                         random_id=0
                     )
-                    mess += 1
                     await asyncio.sleep(0.1)
 
                 except vk_dev.VkErr as err:
@@ -67,15 +60,13 @@ async def flood(event, pl):
                         print(err)
 
         except KeyboardInterrupt as err:
-            raise ExitError()
+            pass
     
             
 
 
 if __name__ == '__main__':
-    try:
-        lp()
-    except ExitError:
-         print("\033[32m[*]\033[0m Bot was stoped!"f"Total chats: {chats} | "f"Total messages: {mess}")
+    lp()
+
 
 
