@@ -22,7 +22,7 @@ os.system('cls')
 os.system('clear')
 
 print()
-print('\033[35m[*]\033[0m Made by Alex-Smir and Rhinik (github.com)')
+print('\033[35m[*]\033[0m Made by Alexxx-Dev and Rhinik (github.com)')
 print()
 print('     ██████        ██████      ')
 print('   ██      ██    ██      ██    ')
