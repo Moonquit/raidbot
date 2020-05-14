@@ -3,7 +3,7 @@
 > This is Raid Bot for vk.com. Made by Alex-Smir and Rhinik (github.com)
 ## Install
 ```bash
-git clone https://github.com/ALex-Smir/raidbot.git
+git clone https://github.com/ALexxx-Dev/raidbot.git
 ```
 ## Run
 At the main repo directory run `code` like a module:
