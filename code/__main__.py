@@ -15,6 +15,8 @@ api = vk_dev.Api(
 )
 lp = api >> vk_dev.LongPoll()
 
+chats = 0
+
 
 @lp.message_new()
 async def flood(event, pl):
