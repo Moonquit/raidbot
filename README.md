@@ -1,9 +1,9 @@
  # Raidbot
 [![](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-382/)
-> This is Raid Bot for vk.com. Made by Alex-Smir and Rhinik (github.com)
+> This is Raid Bot for vk.com. Made by Moonquit and Rhinik (github.com)
 ## Install
 ```bash
-git clone https://github.com/ALexxx-Dev/raidbot.git
+git clone https://github.com/moonquit/raidbot.git
 ```
 ## Run
 At the main repo directory run `code` like a module:
